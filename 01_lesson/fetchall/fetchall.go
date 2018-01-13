@@ -1,12 +1,12 @@
 package main
 
 import (
-	"time"
-	"net/http"
 	"fmt"
 	"io"
 	"io/ioutil"
+	"net/http"
 	"os"
+	"time"
 )
 
 func main() {
@@ -15,13 +15,13 @@ func main() {
 	for _, url := range os.Args[1:] {
 		go fetch(url, ch)
 	}
-	for range ch{
+	for range ch {
 		fmt.Println(<-ch)
 	}
 	fmt.Sprintf("%.2f elapsed", time.Since(start).Seconds())
 }
 
-func fetch(url string, ch chan <- string) {
+func fetch(url string, ch chan<- string) {
 	start := time.Now()
 	resp, err := http.Get(url)
 	if err != nil {
