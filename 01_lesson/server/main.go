@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"sync"
 	"simplego/01_lesson/server/effects"
+	"sync"
 )
 
 var mu sync.Mutex
@@ -29,4 +29,5 @@ func counter(w http.ResponseWriter, r *http.Request) {
 	mu.Lock()
 	fmt.Fprintf(w, "Count %d\n", count)
 	mu.Unlock()
+
 }
