@@ -45,4 +45,3 @@ func isWon(board [][]int) (int, error) {
 
 	return 2, nil
 }
-

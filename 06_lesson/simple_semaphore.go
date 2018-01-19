@@ -17,17 +17,17 @@ func main() {
 
 type foo struct {
 	label string
-	ch1  chan bool
-	ch2 chan bool
-	ch3 chan bool
+	ch1   chan bool
+	ch2   chan bool
+	ch3   chan bool
 }
 
 func newFoo() foo {
 	return foo{
 		label: "",
-		ch1: make(chan bool),
-		ch2: make(chan bool),
-		ch3: make(chan bool),
+		ch1:   make(chan bool),
+		ch2:   make(chan bool),
+		ch3:   make(chan bool),
 	}
 }
 
